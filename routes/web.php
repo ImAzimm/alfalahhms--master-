@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 /**
  * =======================
- *      LTR ROU\TERS
+ *      LTR ROUTERS
  * =======================
  */
 
@@ -38,6 +38,12 @@ foreach ($prefixRouters as $prefixRouter) {
             })->name('sales');
         });
 
+
+        /**\
+         * ==============================
+         *       @Router -  Treatment (Al-Falah Project)
+         * ==============================
+         */
         Route::prefix('treatment')->group(function () {
             Route::get('/create', function () {
                 return view('pages.treatment.create', ['title' => 'Patient Treatment Form', 'breadcrumb' => 'Treatment Form']);
@@ -45,6 +51,36 @@ foreach ($prefixRouters as $prefixRouter) {
             Route::get('/view', function () {
                 return view('pages.treatment.view', ['title' => 'View Patient Treatment', 'breadcrumb' => 'Treatment Form']);
             })->name('treatment.view');
+            Route::get('/index/patient/{patient_id}', function () {
+                return view('pages.treatment.patient-index', ['title' => 'Patient Treatment Index', 'breadcrumb' => 'Treatment Form']);
+            })->name('treatment.patientIndex');
+        });
+
+        /**\
+         * ==============================
+         *       @Router -  Patient (Al-Falah Project)
+         * ==============================
+         */
+        Route::prefix('patient')->group(function () {
+            Route::get('/create-diagnosis', function () {
+                return view('pages.patient.create-diagnosis', ['title' => 'Patient Diagnosis Form', 'breadcrumb' => 'Treatment Form']);
+            })->name('patient.createDiagnosis');
+            Route::get('/diagnosis-index/{patient_id}', function () {
+                return view('pages.patient.diagnosis-index', ['title' => 'Patient Diagnosis Index', 'breadcrumb' => 'Treatment Form']);
+            })->name('patient.diagnosisIndex');
+            Route::get('/view-diagnosis/{diagnosis_id}', function () {
+                return view('pages.patient.view-diagnosis', ['title' => 'Patient Diagnosis Result', 'breadcrumb' => 'Treatment Form']);
+            })->name('patient.viewDiagnosis');
+            
+            Route::get('/create-labtest', function () {
+                return view('pages.patient.create-labtest', ['title' => 'Patient Lab Test Form', 'breadcrumb' => 'Treatment Form']);
+            })->name('patient.createlabtest');
+            Route::get('/view-labtest', function () {
+                return view('pages.patient.view-labtest', ['title' => 'Patient Lab Test Result', 'breadcrumb' => 'Treatment Form']);
+            })->name('patient.viewlabtest');
+            Route::get('/labtest-index/{patient_id}', function () {
+                return view('pages.patient.view-labtest', ['title' => 'Patient Lab Test Index', 'breadcrumb' => 'Treatment Form']);
+            })->name('patient.labtestIndex');
         });
         
         /**

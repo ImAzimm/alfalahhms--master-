@@ -30,17 +30,10 @@
     <div class="row layout-spacing">
         <div class="col-lg-12">
             <div class="statbox widget box box-shadow">
-                <div class="widget-header">
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                            <h4>Patient Treatment Lists</h4>
-                            {{-- <h4 class="strong-title p-3" style="font-size: 1.2rem">Patient Treatment Lists</h4> --}}
-                        </div>                                                           
-                    </div>
-                </div>
                 <div class="widget-content widget-content-area">
-                    <div class="row g-3">
-                        <h4 class="strong-title">Patient Information</h4>
+                    <div class="row p-4 g-3">
+                        <h5 class="strong-title">Patient Information</h5>
+                        
                         <div class="col-md-6">
                             <label for="fullName" class="form-label">Full Name</label>
                             <input type="text" class="form-control darker-text" id="fullName" disabled value="Abu Samah Bin Md Saleh">
@@ -62,10 +55,12 @@
                             <input type="text" class="form-control" id="height" disabled value="160 cm">
                         </div>
                     </div>
-
                     <hr>
 
                     <!-- Table for index -->
+                    <div class="row px-4 g-3">
+                        <h5 class="strong-title">Dialysis Treatment History</h5>
+                    </div>
                     <table id="style-1" class="table style-1 dt-table-hover non-hover">
                         <thead>
                             <tr>
